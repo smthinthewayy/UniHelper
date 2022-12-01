@@ -8,9 +8,42 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    let logoutButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 25
+        button.setTitle("Log Out", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Profile"
+        
+        setupViews()
+        setupConstraints()
+        
+        logoutButton.addTarget(self, action: #selector(handlePresentingLogotButton(_:)), for: .touchUpInside)
+    }
+    
+    @objc func handlePresentingLogotButton(_ sender: UIButton) {
+        print("Log Out pressed")
+//        present(WelcomeViewController(), animated: true)
+//        navigationController?.pushViewController(WelcomeViewController(), animated: true)
+    }
+    
+    func setupViews() {
         view.backgroundColor = UIColor(named: "White")
+        
+        view.addSubview(logoutButton)
+    }
+    
+    func setupConstraints() {
+        logoutButton.snp.makeConstraints { make in
+            make.width.equalTo(200)
+            make.height.equalTo(50)
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
     }
 }

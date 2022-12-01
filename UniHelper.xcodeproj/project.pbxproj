@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6C53DD66AC2D8B321DB2D2DF /* Pods_UniHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FA4A1785C9690A4E837A339 /* Pods_UniHelper.framework */; };
-		712188992938A52D008004A6 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712188982938A52D008004A6 /* ExtensionUIView.swift */; };
-		7121889B2938AAF1008004A6 /* UniversitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121889A2938AAF1008004A6 /* UniversitiesViewController.swift */; };
+		7121889B2938AAF1008004A6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121889A2938AAF1008004A6 /* SearchViewController.swift */; };
 		7121889D2938AB05008004A6 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121889C2938AB05008004A6 /* ServicesViewController.swift */; };
 		7121889F2938AB0E008004A6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7121889E2938AB0E008004A6 /* ProfileViewController.swift */; };
 		712188A12938AC29008004A6 /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712188A02938AC29008004A6 /* DashboardTabBarController.swift */; };
+		712188A32938B84F008004A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 712188A22938B84F008004A6 /* GoogleService-Info.plist */; };
+		712188A52938D179008004A6 /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712188A42938D179008004A6 /* University.swift */; };
+		712188A82938D1ED008004A6 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712188A72938D1ED008004A6 /* Direction.swift */; };
 		7138E0102937E11C00655F74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7138E00F2937E11C00655F74 /* AppDelegate.swift */; };
 		7138E0122937E11C00655F74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7138E0112937E11C00655F74 /* SceneDelegate.swift */; };
 		7138E0142937E11C00655F74 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7138E0132937E11C00655F74 /* WelcomeViewController.swift */; };
@@ -25,11 +27,13 @@
 /* Begin PBXFileReference section */
 		441A811375D2D2683DB913E6 /* Pods-UniHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniHelper.debug.xcconfig"; path = "Target Support Files/Pods-UniHelper/Pods-UniHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		4FA4A1785C9690A4E837A339 /* Pods_UniHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UniHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		712188982938A52D008004A6 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
-		7121889A2938AAF1008004A6 /* UniversitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesViewController.swift; sourceTree = "<group>"; };
+		7121889A2938AAF1008004A6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7121889C2938AB05008004A6 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 		7121889E2938AB0E008004A6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		712188A02938AC29008004A6 /* DashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
+		712188A22938B84F008004A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		712188A42938D179008004A6 /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
+		712188A72938D1ED008004A6 /* Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
 		7138E00C2937E11C00655F74 /* UniHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7138E00F2937E11C00655F74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7138E0112937E11C00655F74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +66,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		712188A62938D1DB008004A6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				712188A42938D179008004A6 /* University.swift */,
+				712188A72938D1ED008004A6 /* Direction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7138E0032937E11C00655F74 = {
 			isa = PBXGroup;
 			children = (
-				712188982938A52D008004A6 /* ExtensionUIView.swift */,
 				7138E00E2937E11C00655F74 /* UniHelper */,
 				7138E00D2937E11C00655F74 /* Products */,
 				BBB70A16F41260EC409DA6B3 /* Pods */,
@@ -86,9 +98,11 @@
 			children = (
 				7138E00F2937E11C00655F74 /* AppDelegate.swift */,
 				7138E0112937E11C00655F74 /* SceneDelegate.swift */,
+				712188A62938D1DB008004A6 /* Model */,
 				717FFA392937EFAD004B32D9 /* Controller */,
 				7138E0182937E11D00655F74 /* Assets.xcassets */,
 				7138E01A2937E11D00655F74 /* LaunchScreen.storyboard */,
+				712188A22938B84F008004A6 /* GoogleService-Info.plist */,
 				7138E01D2937E11D00655F74 /* Info.plist */,
 			);
 			path = UniHelper;
@@ -100,7 +114,7 @@
 				7138E0132937E11C00655F74 /* WelcomeViewController.swift */,
 				717FFA3A2937EFC7004B32D9 /* LogInViewController.swift */,
 				717FFA3C2937F00D004B32D9 /* RegisterViewController.swift */,
-				7121889A2938AAF1008004A6 /* UniversitiesViewController.swift */,
+				7121889A2938AAF1008004A6 /* SearchViewController.swift */,
 				7121889C2938AB05008004A6 /* ServicesViewController.swift */,
 				7121889E2938AB0E008004A6 /* ProfileViewController.swift */,
 				712188A02938AC29008004A6 /* DashboardTabBarController.swift */,
@@ -179,6 +193,7 @@
 			files = (
 				7138E01C2937E11D00655F74 /* LaunchScreen.storyboard in Resources */,
 				7138E0192937E11D00655F74 /* Assets.xcassets in Resources */,
+				712188A32938B84F008004A6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,16 +246,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				712188992938A52D008004A6 /* ExtensionUIView.swift in Sources */,
 				717FFA3B2937EFC7004B32D9 /* LogInViewController.swift in Sources */,
 				7121889D2938AB05008004A6 /* ServicesViewController.swift in Sources */,
 				717FFA3D2937F00D004B32D9 /* RegisterViewController.swift in Sources */,
-				7121889B2938AAF1008004A6 /* UniversitiesViewController.swift in Sources */,
+				7121889B2938AAF1008004A6 /* SearchViewController.swift in Sources */,
 				7138E0142937E11C00655F74 /* WelcomeViewController.swift in Sources */,
 				712188A12938AC29008004A6 /* DashboardTabBarController.swift in Sources */,
+				712188A82938D1ED008004A6 /* Direction.swift in Sources */,
 				7121889F2938AB0E008004A6 /* ProfileViewController.swift in Sources */,
 				7138E0102937E11C00655F74 /* AppDelegate.swift in Sources */,
 				7138E0122937E11C00655F74 /* SceneDelegate.swift in Sources */,
+				712188A52938D179008004A6 /* University.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
