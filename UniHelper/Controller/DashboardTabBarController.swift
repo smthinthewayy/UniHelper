@@ -12,6 +12,12 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
+        
+        hidesBottomBarWhenPushed = true
+        
+//        navigationController?.hidesBottomBarWhenPushed = true
+        
+//        tabBarController?.tabBar.isHidden = false
             
         delegate = self
         

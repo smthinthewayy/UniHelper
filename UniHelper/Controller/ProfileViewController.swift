@@ -27,8 +27,13 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func handlePresentingLogotButton(_ sender: UIButton) {
-        print("Log Out pressed")
-//        present(WelcomeViewController(), animated: true)
+//        print("Log Out pressed")
+        
+        UserDefaults.standard.set(false, forKey: "userLogIn")
+        
+        let vc = WelcomeViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
 //        navigationController?.pushViewController(WelcomeViewController(), animated: true)
     }
     

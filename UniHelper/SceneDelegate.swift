@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -32,7 +33,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window.makeKeyAndVisible()
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
-        let home = DashboardTabBarController()
+        
+//        let currentUser = Auth.auth().currentUser
+//        let home: UIViewController
+//        if currentUser != nil {
+//            home = DashboardTabBarController()
+//        } else {
+//            home = WelcomeViewController()
+//        }
+        
+        let home: UIViewController
+        if UserDefaults.standard.bool(forKey: "userLogIn") {
+            home = DashboardTabBarController()
+        } else {
+            home = WelcomeViewController()
+        }
+
+//        let home = WelcomeViewController()
+        
+//        let home = DashboardTabBarController()
         self.window?.rootViewController = home
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene

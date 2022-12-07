@@ -22,19 +22,27 @@ class WelcomeViewController: UIViewController {
         return label
     }()
 
-    lazy var loginButton: UIButton = {
+//    lazy var loginButton: UIButton = {
+//        let button = UIButton()
+//        button.backgroundColor = UIColor(named: "Grey")
+//        button.layer.cornerRadius = 25
+//        button.setTitle("Log In", for: .normal)
+//        return button
+//    }()
+//
+//    lazy var registerButton: UIButton = {
+//        let button = UIButton()
+//        button.backgroundColor = UIColor(named: "Grey")
+//        button.layer.cornerRadius = 25
+//        button.setTitle("Register", for: .normal)
+//        return button
+//    }()
+    
+    lazy var getStartedButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "Grey")
         button.layer.cornerRadius = 25
-        button.setTitle("Log In", for: .normal)
-        return button
-    }()
-
-    lazy var registerButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(named: "Grey")
-        button.layer.cornerRadius = 25
-        button.setTitle("Register", for: .normal)
+        button.setTitle("Get Started", for: .normal)
         return button
     }()
 
@@ -44,24 +52,34 @@ class WelcomeViewController: UIViewController {
         setupViews()
         setupConstraints()
 
-        loginButton.addTarget(self, action: #selector(handlePresentingLoginButton(_:)), for: .touchUpInside)
-        registerButton.addTarget(self, action: #selector(handlePresentingRegisterButton(_:)), for: .touchUpInside)
+//        loginButton.addTarget(self, action: #selector(handlePresentingLoginButton(_:)), for: .touchUpInside)
+//        registerButton.addTarget(self, action: #selector(handlePresentingRegisterButton(_:)), for: .touchUpInside)
+        getStartedButton.addTarget(self, action: #selector(handlePresentingGetStartedButton(_:)), for: .touchUpInside)
     }
 
-    @objc func handlePresentingLoginButton(_ sender: UIButton) {
-        let rootVC = LogInViewController()
+//    @objc func handlePresentingLoginButton(_ sender: UIButton) {
+//        let rootVC = LogInViewController()
 //        rootVC.title = "authorization"
 //        let navVC = UINavigationController(rootViewController: rootVC)
 //        navVC.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(rootVC, animated: true)
-    }
+//        navigationController?.pushViewController(rootVC, animated: true)
+//        present(rootVC, animated: true)
+//    }
 
-    @objc func handlePresentingRegisterButton(_ sender: UIButton) {
-        let rootVC = RegisterViewController()
+//    @objc func handlePresentingRegisterButton(_ sender: UIButton) {
+//        let rootVC = RegisterViewController()
 //        rootVC.title = "registration"
 //        let navVC = UINavigationController(rootViewController: rootVC)
 //        navVC.modalPresentationStyle = .fullScreen
-        navigationController?.pushViewController(rootVC, animated: true)
+//        navigationController?.pushViewController(rootVC, animated: true)
+//        present(rootVC, animated: true)
+//    }
+    
+    @objc func handlePresentingGetStartedButton(_ sender: UIButton) {
+        let rootVC = AuthenticationViewController()
+        rootVC.modalPresentationStyle = .fullScreen
+//        navigationController?.pushViewController(rootVC, animated: true)
+        present(rootVC, animated: true)
     }
 
     private func setupViews() {
@@ -69,8 +87,9 @@ class WelcomeViewController: UIViewController {
         
         view.addSubview(appName)
         view.addSubview(appLogoView)
-        view.addSubview(loginButton)
-        view.addSubview(registerButton)
+//        view.addSubview(loginButton)
+//        view.addSubview(registerButton)
+        view.addSubview(getStartedButton)
     }
 
     private func setupConstraints() {
@@ -85,17 +104,24 @@ class WelcomeViewController: UIViewController {
             make.width.equalTo(300)
         }
         
-        loginButton.snp.makeConstraints { make in
+//        loginButton.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.width.equalTo(300)
+//            make.bottom.equalToSuperview().inset(90)
+//            make.height.equalTo(50)
+//        }
+//
+//        registerButton.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.width.equalTo(300)
+//            make.bottom.equalToSuperview().inset(30)
+//            make.height.equalTo(50)
+//        }
+        
+        getStartedButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(300)
-            make.bottom.equalToSuperview().inset(90)
-            make.height.equalTo(50)
-        }
-
-        registerButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalTo(300)
-            make.bottom.equalToSuperview().inset(30)
+            make.bottom.equalToSuperview().inset(50)
             make.height.equalTo(50)
         }
     }

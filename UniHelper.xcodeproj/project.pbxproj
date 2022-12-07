@@ -20,8 +20,20 @@
 		7138E0142937E11C00655F74 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7138E0132937E11C00655F74 /* WelcomeViewController.swift */; };
 		7138E0192937E11D00655F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7138E0182937E11D00655F74 /* Assets.xcassets */; };
 		7138E01C2937E11D00655F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7138E01A2937E11D00655F74 /* LaunchScreen.storyboard */; };
-		717FFA3B2937EFC7004B32D9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FFA3A2937EFC7004B32D9 /* LogInViewController.swift */; };
+		717FFA3B2937EFC7004B32D9 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FFA3A2937EFC7004B32D9 /* AuthenticationViewController.swift */; };
 		717FFA3D2937F00D004B32D9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FFA3C2937F00D004B32D9 /* RegisterViewController.swift */; };
+		71861C1C293B512E00CA2DF7 /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71861C1B293B512E00CA2DF7 /* UserDataViewController.swift */; };
+		71BB7039293F5E3000406EF5 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BB7038293F5E3000406EF5 /* UserData.swift */; };
+		71BF87C0293FCCBD009DC0FC /* FilterSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BF87BF293FCCBD009DC0FC /* FilterSearchViewController.swift */; };
+		71BF87C2293FD22A009DC0FC /* DirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BF87C1293FD22A009DC0FC /* DirectionViewController.swift */; };
+		71E1974C293F372F005328FF /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1974B293F372F005328FF /* DirectionsViewController.swift */; };
+		71E49C65293F8946008AA861 /* UserCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E49C64293F8946008AA861 /* UserCityViewController.swift */; };
+		71E49C67293F8B2E008AA861 /* UserStudyAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E49C66293F8B2E008AA861 /* UserStudyAreaViewController.swift */; };
+		71E49C69293F8FEB008AA861 /* UserSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E49C68293F8FEB008AA861 /* UserSubjectsViewController.swift */; };
+		71E49C6B293F994A008AA861 /* UserScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E49C6A293F994A008AA861 /* UserScoresViewController.swift */; };
+		71E49C6D293FA49A008AA861 /* UserPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E49C6C293FA49A008AA861 /* UserPaymentViewController.swift */; };
+		71E49C6F293FAC6C008AA861 /* UserHostelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E49C6E293FAC6C008AA861 /* UserHostelViewController.swift */; };
+		71F7EB2A294096EC003B46E2 /* UniversitiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F7EB29294096EC003B46E2 /* UniversitiesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,8 +53,20 @@
 		7138E0182937E11D00655F74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7138E01B2937E11D00655F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7138E01D2937E11D00655F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		717FFA3A2937EFC7004B32D9 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		717FFA3A2937EFC7004B32D9 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		717FFA3C2937F00D004B32D9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		71861C1B293B512E00CA2DF7 /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
+		71BB7038293F5E3000406EF5 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		71BF87BF293FCCBD009DC0FC /* FilterSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSearchViewController.swift; sourceTree = "<group>"; };
+		71BF87C1293FD22A009DC0FC /* DirectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionViewController.swift; sourceTree = "<group>"; };
+		71E1974B293F372F005328FF /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
+		71E49C64293F8946008AA861 /* UserCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCityViewController.swift; sourceTree = "<group>"; };
+		71E49C66293F8B2E008AA861 /* UserStudyAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStudyAreaViewController.swift; sourceTree = "<group>"; };
+		71E49C68293F8FEB008AA861 /* UserSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSubjectsViewController.swift; sourceTree = "<group>"; };
+		71E49C6A293F994A008AA861 /* UserScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScoresViewController.swift; sourceTree = "<group>"; };
+		71E49C6C293FA49A008AA861 /* UserPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPaymentViewController.swift; sourceTree = "<group>"; };
+		71E49C6E293FAC6C008AA861 /* UserHostelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHostelViewController.swift; sourceTree = "<group>"; };
+		71F7EB29294096EC003B46E2 /* UniversitiesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesManager.swift; sourceTree = "<group>"; };
 		A453F222A16CAADBDC652B3A /* Pods-UniHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UniHelper.release.xcconfig"; path = "Target Support Files/Pods-UniHelper/Pods-UniHelper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +95,8 @@
 			children = (
 				712188A42938D179008004A6 /* University.swift */,
 				712188A72938D1ED008004A6 /* Direction.swift */,
+				71BB7038293F5E3000406EF5 /* UserData.swift */,
+				71F7EB29294096EC003B46E2 /* UniversitiesManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,12 +138,22 @@
 			isa = PBXGroup;
 			children = (
 				7138E0132937E11C00655F74 /* WelcomeViewController.swift */,
-				717FFA3A2937EFC7004B32D9 /* LogInViewController.swift */,
+				717FFA3A2937EFC7004B32D9 /* AuthenticationViewController.swift */,
 				717FFA3C2937F00D004B32D9 /* RegisterViewController.swift */,
 				7121889A2938AAF1008004A6 /* SearchViewController.swift */,
 				7121889C2938AB05008004A6 /* ServicesViewController.swift */,
 				7121889E2938AB0E008004A6 /* ProfileViewController.swift */,
 				712188A02938AC29008004A6 /* DashboardTabBarController.swift */,
+				71861C1B293B512E00CA2DF7 /* UserDataViewController.swift */,
+				71E1974B293F372F005328FF /* DirectionsViewController.swift */,
+				71E49C64293F8946008AA861 /* UserCityViewController.swift */,
+				71E49C66293F8B2E008AA861 /* UserStudyAreaViewController.swift */,
+				71E49C68293F8FEB008AA861 /* UserSubjectsViewController.swift */,
+				71E49C6A293F994A008AA861 /* UserScoresViewController.swift */,
+				71E49C6C293FA49A008AA861 /* UserPaymentViewController.swift */,
+				71E49C6E293FAC6C008AA861 /* UserHostelViewController.swift */,
+				71BF87BF293FCCBD009DC0FC /* FilterSearchViewController.swift */,
+				71BF87C1293FD22A009DC0FC /* DirectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -246,16 +282,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				717FFA3B2937EFC7004B32D9 /* LogInViewController.swift in Sources */,
+				717FFA3B2937EFC7004B32D9 /* AuthenticationViewController.swift in Sources */,
+				71BF87C0293FCCBD009DC0FC /* FilterSearchViewController.swift in Sources */,
 				7121889D2938AB05008004A6 /* ServicesViewController.swift in Sources */,
+				71E49C6B293F994A008AA861 /* UserScoresViewController.swift in Sources */,
+				71BB7039293F5E3000406EF5 /* UserData.swift in Sources */,
+				71F7EB2A294096EC003B46E2 /* UniversitiesManager.swift in Sources */,
 				717FFA3D2937F00D004B32D9 /* RegisterViewController.swift in Sources */,
+				71E49C67293F8B2E008AA861 /* UserStudyAreaViewController.swift in Sources */,
+				71861C1C293B512E00CA2DF7 /* UserDataViewController.swift in Sources */,
 				7121889B2938AAF1008004A6 /* SearchViewController.swift in Sources */,
 				7138E0142937E11C00655F74 /* WelcomeViewController.swift in Sources */,
 				712188A12938AC29008004A6 /* DashboardTabBarController.swift in Sources */,
 				712188A82938D1ED008004A6 /* Direction.swift in Sources */,
+				71E49C69293F8FEB008AA861 /* UserSubjectsViewController.swift in Sources */,
 				7121889F2938AB0E008004A6 /* ProfileViewController.swift in Sources */,
+				71BF87C2293FD22A009DC0FC /* DirectionViewController.swift in Sources */,
 				7138E0102937E11C00655F74 /* AppDelegate.swift in Sources */,
 				7138E0122937E11C00655F74 /* SceneDelegate.swift in Sources */,
+				71E1974C293F372F005328FF /* DirectionsViewController.swift in Sources */,
+				71E49C65293F8946008AA861 /* UserCityViewController.swift in Sources */,
+				71E49C6D293FA49A008AA861 /* UserPaymentViewController.swift in Sources */,
+				71E49C6F293FAC6C008AA861 /* UserHostelViewController.swift in Sources */,
 				712188A52938D179008004A6 /* University.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

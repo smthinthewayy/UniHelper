@@ -8,6 +8,7 @@ target 'UniHelper' do
   # Pods for UniHelper
   
   pod 'SnapKit', '~> 5.6.0'
+  pod 'iOSDropDown'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
 

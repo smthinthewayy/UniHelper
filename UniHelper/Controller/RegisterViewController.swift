@@ -64,7 +64,8 @@ class RegisterViewController: UIViewController {
 //                    self.passwordView.shakeByX()
 //                    self.errorLabel.text = e.localizedDescription
                 } else {
-                    self.navigationController?.pushViewController(rootVC, animated: true)
+//                    self.navigationController?.pushViewController(rootVC, animated: true)
+                    self.present(rootVC, animated: true)
                 }
             }
         }
