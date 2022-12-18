@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import iOSDropDown
 
 class UserStudyAreaViewController: UIViewController {
     let questionView: UILabel = {
         let text = UILabel()
-        text.text = "Выберите интересующую вас науку:"
+        text.text = "Выберите интересующий вас факультет:"
         text.numberOfLines = 0
         text.lineBreakMode = NSLineBreakMode.byWordWrapping
+        text.font = UIFont.boldSystemFont(ofSize: 30.0)
         return text
     }()
     
@@ -33,71 +33,32 @@ class UserStudyAreaViewController: UIViewController {
         return table
     }()
     
-    private var studyAreas = [
-        "Математические и естественные науки",
-        "Инженерное дело, технологии и технические науки",
-        "Здравоохранение и медицинские науки",
-        "Сельское хозяйство и сельскохозяйственные науки",
-        "Науки об обществе",
-        "Образование и педагогические науки",
-        "Гуманитарные науки",
-        "Искусство и культура"
-    ]
-    
     var selectedstudyArea: String = ""
-    
-//    let dropDownList: DropDown = {
-//        let list = DropDown(frame: CGRect(x: 25, y: 450, width: 350, height: 30))
-//        list.placeholder = "Выберите науку"
-//        list.selectedRowColor = .gray
-//        list.rowBackgroundColor = UIColor(named: "White")!
-//        list.optionArray = ["Математические и \n естественные науки",
-//                            "Инженерное дело, технологии и технические науки",
-//                            "Здравоохранение и медицинские науки",
-//                            "Сельское хозяйство и сельскохозяйственные науки",
-//                            "Науки об обществе",
-//                            "Образование и педагогические науки",
-//                            "Гуманитарные науки",
-//                            "Искусство и культура"
-//        ]
-//        return list
-//    }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        tabBarController?.tabBar.isHidden = true
         
         setupView()
         setupConstraints()
         
+        navigationItem.title = "Факультет"
+        
         tableView.dataSource = self
         tableView.delegate = self
-        
-//        handlePresentingDropDownList()
         
         answerButton.addTarget(self, action: #selector(handlePresentingAnswerButton(_:)), for: .touchUpInside)
     }
     
     @objc func handlePresentingAnswerButton(_ sender: UIButton) {
         UserDefaults.standard.set(selectedstudyArea, forKey: "userDataStudyArea")
-//        print(UserDefaults.standard.string(forKey: "userDataStudyArea")!)
         
         let rootVC = UserSubjectsViewController()
         rootVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(rootVC, animated: true)
     }
     
-//    func handlePresentingDropDownList() {
-//        dropDownList.didSelect{ (selectedText, index, id)  in
-//            UserDefaults.standard.set(selectedText, forKey: "userDataStudyArea")
-//            print(UserDefaults.standard.string(forKey: "userDataStudyArea")!)
-//        }
-//    }
-    
     func setupView() {
         view.backgroundColor = UIColor(named: "White")
-        
         view.addSubview(questionView)
         view.addSubview(answerButton)
         view.addSubview(tableView)
@@ -105,10 +66,10 @@ class UserStudyAreaViewController: UIViewController {
     
     func setupConstraints() {
         questionView.snp.makeConstraints { make in
-            make.height.equalTo(50)
+            make.height.equalTo(200)
+            make.top.equalToSuperview().inset(50)
             make.width.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(100)
         }
         
         answerButton.snp.makeConstraints { make in
@@ -119,10 +80,10 @@ class UserStudyAreaViewController: UIViewController {
         }
         
         tableView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-//            make.height.equalTo(500)
-            make.top.equalToSuperview().inset(200)
-            make.bottom.equalToSuperview().inset(150)
+            make.left.equalToSuperview().inset(10)
+            make.right.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(215)
+            make.bottom.equalToSuperview().inset(175)
         }
     }
 }
@@ -131,14 +92,14 @@ class UserStudyAreaViewController: UIViewController {
 
 extension UserStudyAreaViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return studyAreas.count
+        return UniversitiesManager.faculties.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let studyArea: String!
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        studyArea = studyAreas[indexPath.row]
+        studyArea = UniversitiesManager.faculties[indexPath.row]
         
         cell.textLabel?.text = studyArea
         cell.textLabel?.numberOfLines = 0
@@ -153,6 +114,6 @@ extension UserStudyAreaViewController: UITableViewDataSource {
 
 extension UserStudyAreaViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedstudyArea = studyAreas[indexPath.row]
+        selectedstudyArea = UniversitiesManager.faculties[indexPath.row]
     }
 }

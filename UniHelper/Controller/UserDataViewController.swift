@@ -68,16 +68,15 @@ class UserDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        tabBarController?.tabBar.isHidden = true
-
         setupViews()
         setupConstraints()
+        
+        navigationItem.title = "Ваши данные"
 
         answerButton.addTarget(self, action: #selector(handlePresentingAnswerButton(_:)), for: .touchUpInside)
     }
     
     @objc func handlePresentingAnswerButton(_ sender: UIButton) {
-//        print("handlePresentingAnswerButton()")
         let rootVC = FilterSearchViewController()
         rootVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(rootVC, animated: true)
@@ -85,7 +84,6 @@ class UserDataViewController: UIViewController {
 
     func setupViews() {
         view.backgroundColor = UIColor(named: "White")
-
         view.addSubview(answerButton)
         view.addSubview(cityLabel)
         view.addSubview(scienceLabel)

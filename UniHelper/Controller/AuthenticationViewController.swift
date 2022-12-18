@@ -22,7 +22,7 @@ class AuthenticationViewController: UIViewController {
     
     let emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Email"
+        textField.placeholder = "Почта"
         textField.textAlignment = .center
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
@@ -33,7 +33,7 @@ class AuthenticationViewController: UIViewController {
     
     let passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Password"
+        textField.placeholder = "Пароль"
         textField.isSecureTextEntry = true
         textField.textAlignment = .center
         textField.autocapitalizationType = .none
@@ -47,8 +47,8 @@ class AuthenticationViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "Grey")
         button.layer.cornerRadius = 25
-        button.setTitle("Log In", for: .normal)
-        button.titleLabel?.font = UIFont(name: "System", size: 20)
+        button.setTitle("Войти", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         return button
     }()
     
@@ -56,8 +56,8 @@ class AuthenticationViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = UIColor(named: "Grey")
         button.layer.cornerRadius = 25
-        button.setTitle("Register", for: .normal)
-        button.titleLabel?.font = UIFont(name: "System", size: 20)
+        button.setTitle("Зарегистрироваться", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         return button
     }()
     
@@ -119,7 +119,6 @@ class AuthenticationViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = UIColor(named: "White")
-        
         view.addSubview(emailImageView)
         view.addSubview(passwordImageView)
         view.addSubview(emailTextField)

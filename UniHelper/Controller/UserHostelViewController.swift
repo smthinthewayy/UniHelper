@@ -26,7 +26,6 @@ class UserHostelViewController: UIViewController {
     
     let hostelTrueButton: UIButton = {
         let button = UIButton()
-//        button.backgroundColor = UIColor(named: "Grey")
         button.layer.cornerRadius = 25
         button.setTitleColor(UIColor(named: "Black"), for: .normal)
         button.setTitle("Нужно", for: .normal)
@@ -35,7 +34,6 @@ class UserHostelViewController: UIViewController {
     
     let hostelFalseButton: UIButton = {
         let button = UIButton()
-//        button.backgroundColor = UIColor(named: "Grey")
         button.setTitleColor(UIColor(named: "Black"), for: .normal)
         button.layer.cornerRadius = 25
         button.setTitle("Не нужно", for: .normal)
@@ -47,13 +45,10 @@ class UserHostelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tabBarController?.tabBar.isHidden = true
-        
         setupView()
         setupConstraints()
         
-//        tableView.dataSource = self
-//        tableView.delegate = self
+        navigationItem.title = "Общежитие"
         
         answerButton.addTarget(self, action: #selector(handlePresentingAnswerButton(_:)), for: .touchUpInside)
         hostelTrueButton.addTarget(self, action: #selector(handlePresentingPaymentButton(_:)), for: .touchUpInside)
@@ -62,7 +57,6 @@ class UserHostelViewController: UIViewController {
     
     @objc func handlePresentingAnswerButton(_ sender: UIButton) {
         UserDefaults.standard.set(hostel, forKey: "UserDataHostel")
-//        print(UserDefaults.standard.bool(forKey: "UserDataHostel"))
         
         let rootVC = UserDataViewController()
         rootVC.modalPresentationStyle = .fullScreen
@@ -85,10 +79,8 @@ class UserHostelViewController: UIViewController {
 
     func setupView() {
         view.backgroundColor = UIColor(named: "White")
-        
         view.addSubview(questionView)
         view.addSubview(answerButton)
-
         view.addSubview(hostelFalseButton)
         view.addSubview(hostelTrueButton)
     }

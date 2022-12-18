@@ -14,6 +14,7 @@ class UserCityViewController: UIViewController {
         text.text = "В каком городе Вы хотите учиться?"
         text.numberOfLines = 0
         text.lineBreakMode = NSLineBreakMode.byWordWrapping
+        text.font = UIFont.boldSystemFont(ofSize: 30.0)
         return text
     }()
     
@@ -26,21 +27,21 @@ class UserCityViewController: UIViewController {
     }()
     
     let dropDownList: DropDown = {
-        let list = DropDown(frame: CGRect(x: 150, y: 450, width: 200, height: 30))
+        let list = DropDown(frame: CGRect(x: 150, y: 400, width: 200, height: 30))
         list.placeholder = "Select city"
         list.selectedRowColor = .gray
         list.rowBackgroundColor = UIColor(named: "White")!
-        list.optionArray = ["Москва", "Санкт-Петербург", "Екатеринбург", "Архангельск"]
+        list.optionArray = ["Москва", "Санкт-Петербург", "Сочи", "Калининград", "Владикавказ", "Мурманск", "Череповец", "Екатеринбург"]
         return list
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tabBarController?.tabBar.isHidden = true
-        
         setupView()
         setupConstraints()
+        
+        navigationItem.title = "Город"
         
         handlePresentingDropDownList()
         
@@ -56,13 +57,11 @@ class UserCityViewController: UIViewController {
     func handlePresentingDropDownList() {
         dropDownList.didSelect{ (selectedText, index, id)  in
             UserDefaults.standard.set(selectedText, forKey: "userDataCity")
-//            print(UserDefaults.standard.string(forKey: "userDataCity")!)
         }
     }
     
     func setupView() {
         view.backgroundColor = UIColor(named: "White")
-        
         view.addSubview(questionView)
         view.addSubview(answerButton)
         view.addSubview(dropDownList)
@@ -70,10 +69,10 @@ class UserCityViewController: UIViewController {
     
     func setupConstraints() {
         questionView.snp.makeConstraints { make in
-            make.height.equalTo(500)
+            make.height.equalTo(200)
+            make.top.equalToSuperview().inset(50)
             make.width.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(100)
         }
         
         answerButton.snp.makeConstraints { make in

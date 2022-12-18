@@ -27,6 +27,8 @@ class FilterSearchViewController: UIViewController {
         setupConstraints()
         loadDirections()
         
+        navigationItem.title = "Подходящие направления"
+        
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = true
         
@@ -36,30 +38,31 @@ class FilterSearchViewController: UIViewController {
     
     func loadDirections() {
         let city: String = UserDefaults.standard.string(forKey: "userDataCity")!
-//        let science: String = UserDefaults.standard.string(forKey: "userDataStudyArea")!
+        let faculty: String = UserDefaults.standard.string(forKey: "userDataStudyArea")!
         let subjects: [String] = (UserDefaults.standard.object(forKey: "UserDataSubjects") as! [String]?)!
         let scores: [Int] = UserDefaults.standard.object(forKey: "UserDataScores") as! [Int]
 //        let payment: Bool = UserDefaults.standard.bool(forKey: "UserDataPayment")
 //        let hostel: Bool = UserDefaults.standard.bool(forKey: "UserDataHostel")
-        
         for direction in UniversitiesManager.universities[0].directions {
             if direction.city == city {
-                let sourceSubjects = direction.subjects.sorted()
-                let userSubjects = subjects.sorted()
-                var flag = true
-                
-                for i in 0 ... min(sourceSubjects.count, userSubjects.count) - 1 {
-                    if !sourceSubjects[i].contains(userSubjects[i]) {
-                        flag = false
-                        break
+                if direction.faculty == faculty {
+                    let sourceSubjects = direction.subjects.sorted()
+                    let userSubjects = subjects.sorted()
+                    var flag = true
+                    
+                    for i in 0 ... min(sourceSubjects.count, userSubjects.count) - 1 {
+                        if !sourceSubjects[i].contains(userSubjects[i]) {
+                            flag = false
+                            break
+                        }
                     }
-                }
-                
-                if flag {
-                    if scores.reduce(0, +) >= direction.scores {
-                        filteredDirections.append(direction)
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
+                    
+                    if flag {
+                        if scores.reduce(0, +) >= direction.scores {
+                            filteredDirections.append(direction)
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
                         }
                     }
                 }

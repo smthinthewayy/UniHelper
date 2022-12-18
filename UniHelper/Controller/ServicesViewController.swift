@@ -12,7 +12,7 @@ class ServicesViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
-        button.setTitle("Select Universities", for: .normal)
+        button.setTitle("Выбрать Направление", for: .normal)
         button.setTitleColor(UIColor(named: "Black"), for: .normal)
         return button
     }()
@@ -22,18 +22,9 @@ class ServicesViewController: UIViewController {
         
         setupViews()
         setupConstraints()
-        
-//        tabBarController?.tabBar.isHidden = false
-//        
-//        hidesBottomBarWhenPushed = true
 
         selectButton.addTarget(self, action: #selector(handlePresentingSelectButton(_:)), for: .touchUpInside)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//        tabBarController?.tabBar.isHidden = false
-//    }
 
     @objc func handlePresentingSelectButton(_ sender: UIButton) {
         UserDefaults.standard.setValue("", forKeyPath: "userDataCity")
@@ -43,17 +34,12 @@ class ServicesViewController: UIViewController {
         UserDefaults.standard.setValue(0, forKeyPath: "UserDataPayment")
         UserDefaults.standard.setValue("", forKeyPath: "UserDataHostel")
         
-//        print("selectButton pressed")
         let rootVC = UserCityViewController()
-//        rootVC.modalPresentationStyle = .fullScreen
-//        rootVC.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(rootVC, animated: true)
-//        present(rootVC, animated: true)
     }
     
     func setupViews() {
         view.backgroundColor = UIColor(named: "White")
-        
         view.addSubview(selectButton)
     }
     

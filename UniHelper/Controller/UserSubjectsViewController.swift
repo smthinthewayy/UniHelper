@@ -11,9 +11,10 @@ import iOSDropDown
 class UserSubjectsViewController: UIViewController {
     let questionView: UILabel = {
         let text = UILabel()
-        text.text = "Выберите предметы которые вы планируете сдавать/сдавали:"
+        text.text = "Выберите предметы которые Вы сдавали:"
         text.numberOfLines = 0
         text.lineBreakMode = NSLineBreakMode.byWordWrapping
+        text.font = UIFont.boldSystemFont(ofSize: 30.0)
         return text
     }()
     
@@ -36,33 +37,15 @@ class UserSubjectsViewController: UIViewController {
         return table
     }()
     
-    private var subjects = [
-        "Математика (база)",
-        "Математика (профиль)",
-        "Русский язык",
-        "Физика",
-        "Химия",
-        "История",
-        "Обществознание",
-        "Информатика и ИКТ",
-        "Биология",
-        "География",
-        "Английский язык",
-        "Немецкий язык",
-        "Французский язык",
-        "Испанский язык",
-        "Китайский язык"
-    ]
-    
     var selectedSubjects = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tabBarController?.tabBar.isHidden = true
-        
         setupView()
         setupConstraints()
+        
+        navigationItem.title = "Предметы"
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -71,9 +54,16 @@ class UserSubjectsViewController: UIViewController {
     }
     
     @objc func handlePresentingAnswerButton(_ sender: UIButton) {
+        if let selected = tableView.indexPathsForSelectedRows {
+            for item in selected {
+                if let i = item.last {
+                    selectedSubjects.append(UniversitiesManager.subjects[i])
+                }
+            }
+        }
+
         UserDefaults.standard.set(selectedSubjects, forKey: "UserDataSubjects")
-//        print(UserDefaults.standard.object(forKey: "UserDataSubjects"))
-        
+
         let rootVC = UserScoresViewController()
         rootVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(rootVC, animated: true)
@@ -81,7 +71,6 @@ class UserSubjectsViewController: UIViewController {
     
     func setupView() {
         view.backgroundColor = UIColor(named: "White")
-        
         view.addSubview(questionView)
         view.addSubview(answerButton)
         view.addSubview(tableView)
@@ -89,10 +78,10 @@ class UserSubjectsViewController: UIViewController {
     
     func setupConstraints() {
         questionView.snp.makeConstraints { make in
-            make.height.equalTo(50)
+            make.height.equalTo(200)
+            make.top.equalToSuperview().inset(50)
             make.width.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(100)
         }
         
         answerButton.snp.makeConstraints { make in
@@ -103,10 +92,10 @@ class UserSubjectsViewController: UIViewController {
         }
         
         tableView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-//            make.height.equalTo(500)
+            make.left.equalToSuperview().inset(10)
+            make.right.equalToSuperview().inset(10)
             make.top.equalToSuperview().inset(200)
-            make.bottom.equalToSuperview().inset(200)
+            make.bottom.equalToSuperview().inset(175)
         }
     }
 }
@@ -115,14 +104,14 @@ class UserSubjectsViewController: UIViewController {
 
 extension UserSubjectsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return subjects.count
+        return UniversitiesManager.subjects.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let subject: String!
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        subject = subjects[indexPath.row]
+        subject = UniversitiesManager.subjects[indexPath.row]
         
         cell.textLabel?.text = subject
         cell.textLabel?.numberOfLines = 0
@@ -137,6 +126,7 @@ extension UserSubjectsViewController: UITableViewDataSource {
 
 extension UserSubjectsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedSubjects.append(subjects[indexPath.row])
+//        let indexPath =
+//        selectedSubjects.append(UniversitiesManager.subjects[indexPath.row])
     }
 }

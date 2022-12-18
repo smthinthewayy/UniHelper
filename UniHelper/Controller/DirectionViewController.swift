@@ -72,7 +72,7 @@ class DirectionViewController: UIViewController {
         return label
     }()
     
-    var direction = Direction(city: "", faculty: "", name: "", subjects: [""], scores: 0, budgetPlaces: 0, payment: 0, hostel: "")
+    var direction: Direction? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,23 +81,22 @@ class DirectionViewController: UIViewController {
         setupConstraints()
         loadDirection()
         
-        navigationItem.title = direction.name
+        navigationItem.title = direction!.name
     }
     
     func loadDirection() {
-        cityLabel.text = cityLabel.text! + direction.city
-        facultyLabel.text = facultyLabel.text! + direction.faculty
-        nameLabel.text = nameLabel.text! + direction.name
-        subjectsLabel.text = subjectsLabel.text! + direction.subjects.joined(separator: ", ")
-        scoresLabel.text = scoresLabel.text! + String(direction.scores)
-        budgetPlacesLabel.text = budgetPlacesLabel.text! + String(direction.budgetPlaces)
-        paymentLabel.text = paymentLabel.text! + String(direction.payment)
-        hostelLabel.text = hostelLabel.text! + direction.hostel
+        cityLabel.text = cityLabel.text! + direction!.city
+        facultyLabel.text = facultyLabel.text! + direction!.faculty
+        nameLabel.text = nameLabel.text! + direction!.name
+        subjectsLabel.text = subjectsLabel.text! + direction!.subjects.joined(separator: ", ")
+        scoresLabel.text = scoresLabel.text! + String(direction!.scores)
+        budgetPlacesLabel.text = budgetPlacesLabel.text! + String(direction!.budgetPlaces)
+        paymentLabel.text = paymentLabel.text! + String(direction!.payment)
+        hostelLabel.text = hostelLabel.text! + direction!.hostel
     }
     
     func setupViews() {
         view.backgroundColor = UIColor(named: "White")
-
         view.addSubview(cityLabel)
         view.addSubview(facultyLabel)
         view.addSubview(nameLabel)
@@ -120,49 +119,49 @@ class DirectionViewController: UIViewController {
             make.width.equalTo(350)
             make.height.equalTo(50)
             make.left.equalTo(25)
-            make.top.equalTo(cityLabel).inset(75)
+            make.top.equalTo(cityLabel).inset(50)
         }
         
         nameLabel.snp.makeConstraints { make in
             make.width.equalTo(350)
             make.height.equalTo(50)
             make.left.equalTo(25)
-            make.top.equalTo(facultyLabel).inset(75)
+            make.top.equalTo(facultyLabel).inset(50)
         }
         
         subjectsLabel.snp.makeConstraints { make in
             make.width.equalTo(350)
             make.height.equalTo(50)
             make.left.equalTo(25)
-            make.top.equalTo(nameLabel).inset(75)
+            make.top.equalTo(nameLabel).inset(50)
         }
         
         scoresLabel.snp.makeConstraints { make in
             make.width.equalTo(350)
             make.height.equalTo(50)
             make.left.equalTo(25)
-            make.top.equalTo(subjectsLabel).inset(75)
+            make.top.equalTo(subjectsLabel).inset(50)
         }
         
         budgetPlacesLabel.snp.makeConstraints { make in
             make.width.equalTo(350)
             make.height.equalTo(50)
             make.left.equalTo(25)
-            make.top.equalTo(scoresLabel).inset(75)
+            make.top.equalTo(scoresLabel).inset(50)
         }
         
         paymentLabel.snp.makeConstraints { make in
             make.width.equalTo(350)
             make.height.equalTo(50)
             make.left.equalTo(25)
-            make.top.equalTo(budgetPlacesLabel).inset(75)
+            make.top.equalTo(budgetPlacesLabel).inset(50)
         }
         
         hostelLabel.snp.makeConstraints { make in
             make.width.equalTo(350)
             make.height.equalTo(50)
             make.left.equalTo(25)
-            make.top.equalTo(paymentLabel).inset(75)
+            make.top.equalTo(paymentLabel).inset(50)
         }
     }
 }

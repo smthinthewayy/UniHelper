@@ -15,10 +15,8 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
         
         hidesBottomBarWhenPushed = true
         
-//        navigationController?.hidesBottomBarWhenPushed = true
-        
-//        tabBarController?.tabBar.isHidden = false
-            
+        UITabBar.appearance().tintColor = UIColor(named: "Grey")
+
         delegate = self
         
         setupVCs()
@@ -26,9 +24,9 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
     
     func setupVCs() {
         viewControllers = [
-            createNavController(for: SearchViewController(), title: NSLocalizedString("Search", comment: ""), image: UIImage(systemName: "magnifyingglass")!),
-            createNavController(for: ServicesViewController(), title: NSLocalizedString("Home", comment: ""), image: UIImage(systemName: "house")!),
-            createNavController(for: ProfileViewController(), title: NSLocalizedString("Profile", comment: ""), image: UIImage(systemName: "person")!)
+            createNavController(for: SearchViewController(), title: NSLocalizedString("Поиск", comment: ""), image: UIImage(systemName: "magnifyingglass")!),
+            createNavController(for: ServicesViewController(), title: NSLocalizedString("Сервисы", comment: ""), image: UIImage(systemName: "house")!),
+            createNavController(for: ProfileViewController(), title: NSLocalizedString("Профиль", comment: ""), image: UIImage(systemName: "person")!)
         ]
     }
     
@@ -36,7 +34,6 @@ class DashboardTabBarController: UITabBarController, UITabBarControllerDelegate 
         let navController = UINavigationController(rootViewController: rootViewController)
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
-//        navController.navigationBar.prefersLargeTitles = true
         rootViewController.navigationItem.title = title
         return navController
     }

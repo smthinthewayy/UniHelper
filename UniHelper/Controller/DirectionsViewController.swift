@@ -15,10 +15,9 @@ class DirectionsViewController: UIViewController {
         return table
     }()
     
-    var university: University = University(name: "", directions: [Direction(city: "", faculty: "", name: "", subjects: [""], scores: 0, budgetPlaces: 0, payment: 0, hostel: "")])
+    var university: University? = nil
         
-    var selectedDirection = Direction(city: "", faculty: "", name: "", subjects: [""], scores: 0, budgetPlaces: 0, payment: 0, hostel: "")
-
+    var selectedDirection: Direction? = nil
     
     override func viewDidLoad() {
         setupViews()
@@ -27,17 +26,13 @@ class DirectionsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-//        print("completionHandler возвращает \(completionHandler?(university))")
-        
-        navigationItem.title = "Search"
+        navigationItem.title = "Направления"
     }
     
     func setupViews() {
         view.backgroundColor = UIColor(named: "White")
-
         view.addSubview(tableView)
     }
-    
     
     func setupConstraints() {
         tableView.snp.makeConstraints { make in
@@ -50,26 +45,19 @@ class DirectionsViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension DirectionsViewController: UITableViewDataSource {
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return university.directions.count
+       return university!.directions.count
    }
 
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let direction = university.directions[indexPath.row].name
+       let direction = university!.directions[indexPath.row].name
        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.delegate = self
-//       cell.backgroundColor = UIColor.clear
-//       cell.largeContentTitle = direction
-//       var content = cell.defaultContentConfiguration()
-       
        
        cell.textLabel?.text = direction
        cell.textLabel?.numberOfLines = 0
        cell.textLabel?.lineBreakMode = .byWordWrapping
-       cell.imageView?.image = UIImage(systemName: "house")
+//       cell.imageView?.image = UIImage(systemName: "house")
        cell.backgroundColor = .clear
        
-//       content.text = direction
-//       cell.contentConfiguration = content
        return cell
    }
 }
@@ -78,10 +66,11 @@ extension DirectionsViewController: UITableViewDataSource {
 
 extension DirectionsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedDirection = university.directions[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedDirection = university!.directions[indexPath.row]
         
         let rootVC = DirectionViewController()
-        rootVC.direction = selectedDirection
+        rootVC.direction = selectedDirection!
         rootVC.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(rootVC, animated: true)
     }

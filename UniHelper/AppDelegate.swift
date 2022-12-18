@@ -14,7 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UINavigationBar.appearance().barTintColor = UIColor(named: "White")
         UINavigationBar.appearance().tintColor = UIColor(named: "Black")
+        
         FirebaseApp.configure()
+        
+        let um = UniversitiesManager()
+        if let data = um.readLocalFile(forName: "Universities") {
+            um.parseJSON(data)
+        }
+        
         return true
     }
 

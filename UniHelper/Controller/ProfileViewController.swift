@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .white
         button.layer.cornerRadius = 25
-        button.setTitle("Log Out", for: .normal)
+        button.setTitle("Выйти", for: .normal)
         button.setTitleColor(.red, for: .normal)
         return button
     }()
@@ -23,23 +23,19 @@ class ProfileViewController: UIViewController {
         setupViews()
         setupConstraints()
         
-        logoutButton.addTarget(self, action: #selector(handlePresentingLogotButton(_:)), for: .touchUpInside)
+        logoutButton.addTarget(self, action: #selector(handlePresentingLogoutButton(_:)), for: .touchUpInside)
     }
     
-    @objc func handlePresentingLogotButton(_ sender: UIButton) {
-//        print("Log Out pressed")
-        
+    @objc func handlePresentingLogoutButton(_ sender: UIButton) {
         UserDefaults.standard.set(false, forKey: "userLogIn")
         
         let vc = WelcomeViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
-//        navigationController?.pushViewController(WelcomeViewController(), animated: true)
     }
     
     func setupViews() {
         view.backgroundColor = UIColor(named: "White")
-        
         view.addSubview(logoutButton)
     }
     

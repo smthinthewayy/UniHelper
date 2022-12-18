@@ -26,7 +26,6 @@ class UserPaymentViewController: UIViewController {
     
     let paymentTrueButton: UIButton = {
         let button = UIButton()
-//        button.backgroundColor = UIColor(named: "Grey")
         button.layer.cornerRadius = 25
         button.setTitleColor(.black, for: .normal)
         button.setTitle("Бюджетное обучение", for: .normal)
@@ -35,7 +34,6 @@ class UserPaymentViewController: UIViewController {
     
     let paymentFalseButton: UIButton = {
         let button = UIButton()
-//        button.backgroundColor = UIColor(named: "Grey")
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 25
         button.setTitle("Платное обучение", for: .normal)
@@ -46,14 +44,11 @@ class UserPaymentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        tabBarController?.tabBar.isHidden = true
-        
+                
         setupView()
         setupConstraints()
         
-//        tableView.dataSource = self
-//        tableView.delegate = self
+        navigationItem.title = "Обучение"
         
         answerButton.addTarget(self, action: #selector(handlePresentingAnswerButton(_:)), for: .touchUpInside)
         paymentTrueButton.addTarget(self, action: #selector(handlePresentingPaymentButton(_:)), for: .touchUpInside)
@@ -62,7 +57,6 @@ class UserPaymentViewController: UIViewController {
     
     @objc func handlePresentingAnswerButton(_ sender: UIButton) {
         UserDefaults.standard.set(payment, forKey: "UserDataPayment")
-//        print(UserDefaults.standard.bool(forKey: "UserDataPayment"))
         
         let rootVC = UserHostelViewController()
         rootVC.modalPresentationStyle = .fullScreen
@@ -85,10 +79,8 @@ class UserPaymentViewController: UIViewController {
 
     func setupView() {
         view.backgroundColor = UIColor(named: "White")
-        
         view.addSubview(questionView)
         view.addSubview(answerButton)
-        
         view.addSubview(paymentTrueButton)
         view.addSubview(paymentFalseButton)
     }
