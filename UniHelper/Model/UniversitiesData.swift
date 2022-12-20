@@ -13,6 +13,16 @@ struct UniversitiesData: Decodable {
 
 struct University: Codable {
     let name: String
+//    let type: String
+//    let region: String
+//    let city: String
+//    let phone: String
+//    let email: String
+//    let emailac: String
+//    let website: String
+//    let address: String
+//    let director: String
+//    let post: String
     let directions: [Direction]
 }
 

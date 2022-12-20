@@ -185,6 +185,8 @@
 			dependencies = (
 			);
 			name = UniHelper;
+			packageProductDependencies = (
+			);
 			productName = UniHelper;
 			productReference = 7138E00C2937E11C00655F74 /* UniHelper.app */;
 			productType = "com.apple.product-type.application";
@@ -213,6 +215,9 @@
 				Base,
 			);
 			mainGroup = 7138E0032937E11C00655F74;
+			packageReferences = (
+				71C453C1295055D200325901 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 7138E00D2937E11C00655F74 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -516,6 +521,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		71C453C1295055D200325901 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 7138E0042937E11C00655F74 /* Project object */;
 }

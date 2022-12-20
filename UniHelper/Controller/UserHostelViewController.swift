@@ -13,6 +13,7 @@ class UserHostelViewController: UIViewController {
         text.text = "Нужно ли Вам общежитие?"
         text.numberOfLines = 0
         text.lineBreakMode = NSLineBreakMode.byWordWrapping
+        text.font = UIFont.boldSystemFont(ofSize: 30.0)
         return text
     }()
     
@@ -87,10 +88,10 @@ class UserHostelViewController: UIViewController {
     
     func setupConstraints() {
         questionView.snp.makeConstraints { make in
-            make.height.equalTo(50)
+            make.height.equalTo(200)
+            make.top.equalToSuperview().inset(50)
             make.width.equalToSuperview().inset(30)
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(100)
         }
         
         answerButton.snp.makeConstraints { make in

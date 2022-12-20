@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import FirebaseFirestore
 
 class SearchViewController: UIViewController {
     let searchController: UISearchController = {
@@ -126,7 +125,6 @@ extension SearchViewController: UITableViewDataSource {
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = .byWordWrapping
         cell.imageView?.image = UIImage(systemName: "house")
-//        cell.imageView?.image = UIImage(named: "poli")
         cell.backgroundColor = .clear
         
         return cell

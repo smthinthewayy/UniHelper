@@ -11,5 +11,6 @@ target 'UniHelper' do
   pod 'iOSDropDown'
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseDatabase'
 
 end

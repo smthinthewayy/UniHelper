@@ -44,8 +44,12 @@ class FilterSearchViewController: UIViewController {
 //        let payment: Bool = UserDefaults.standard.bool(forKey: "UserDataPayment")
 //        let hostel: Bool = UserDefaults.standard.bool(forKey: "UserDataHostel")
         for direction in UniversitiesManager.universities[0].directions {
-            if direction.city == city {
-                if direction.faculty == faculty {
+//            print(direction.city)
+//            print(city)
+//            print(direction.faculty)
+//            print(faculty)
+            if direction.city.lowercased() == city.lowercased() {
+                if direction.faculty.lowercased() == faculty.lowercased() {
                     let sourceSubjects = direction.subjects.sorted()
                     let userSubjects = subjects.sorted()
                     var flag = true
